@@ -1,5 +1,6 @@
 
 import './App.css';
+import logo from '../../../../../docs/octofitapp-small.png';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Activities from './components/Activities';
 import Leaderboard from './components/Leaderboard';
@@ -11,9 +12,12 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+        <nav className="navbar navbar-expand-lg navbar-light shadow-sm">
           <div className="container-fluid">
-            <Link className="navbar-brand fw-bold text-primary" to="/">OctoFit Tracker</Link>
+            <Link className="navbar-brand d-flex align-items-center" to="/">
+              <img src={logo} alt="OctoFit Logo" className="App-logo me-2" />
+              <span className="fw-bold text-white">OctoFit Tracker</span>
+            </Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>
