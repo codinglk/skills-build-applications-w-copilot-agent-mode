@@ -19,13 +19,37 @@ const Activities = () => {
   }, [apiUrl]);
 
   return (
-    <div>
-      <h2>Activities</h2>
-      <ul>
-        {activities.map((activity, idx) => (
-          <li key={idx}>{activity.activity} ({activity.user}) - {activity.duration} min</li>
-        ))}
-      </ul>
+    <div className="container my-4">
+      <div className="card shadow-sm">
+        <div className="card-body">
+          <h2 className="card-title mb-4 text-secondary text-center">Activities</h2>
+          <div className="table-responsive">
+            <table className="table table-striped table-hover align-middle">
+              <thead className="table-dark">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Activity</th>
+                  <th scope="col">User</th>
+                  <th scope="col">Duration (min)</th>
+                </tr>
+              </thead>
+              <tbody>
+                {activities.map((activity, idx) => (
+                  <tr key={idx}>
+                    <td>{idx + 1}</td>
+                    <td>{activity.activity}</td>
+                    <td>{activity.user}</td>
+                    <td>{activity.duration}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="d-flex justify-content-end mt-3">
+            <button className="btn btn-secondary">Add Activity</button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
